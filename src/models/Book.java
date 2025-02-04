@@ -3,7 +3,6 @@ package models;
 import java.time.LocalDate;
 
 public class Book {
-    private int id;
     private String name;
     private String author;
     private String language;
@@ -11,19 +10,10 @@ public class Book {
     private LocalDate returnedDate;
     private User user;
 
-    public Book(int id, String name, String author, String language) {
-        this.id = id;
+    public Book(String name, String author, String language) {
         this.name = name;
         this.author = author;
         this.language = language;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -61,7 +51,6 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", language='" + language + '\'' +

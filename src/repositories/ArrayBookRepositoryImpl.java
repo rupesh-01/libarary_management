@@ -3,6 +3,9 @@ package repositories;
 import models.Book;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ArrayBookRepositoryImpl implements BookRepository {
     private Book[] availableBooks;
@@ -11,7 +14,7 @@ public class ArrayBookRepositoryImpl implements BookRepository {
     public ArrayBookRepositoryImpl() {
         availableBooks = new Book[5];
         this.bookCount = 5;
-        availableBooks[0] = new Book(1, "Rich Dad and Poor Dad", "Kim", "en");
+        availableBooks[0] = new Book("Rich Dad and Poor Dad", "Kim", "en");
     }
 
 
@@ -21,18 +24,18 @@ public class ArrayBookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public Book updateBook(int id, boolean status, LocalDate issueDate) {
+    public Book updateBook(int id, LocalDate issueDate) {
         return null;
     }
 
     @Override
-    public Book deleteBook(int id) {
-        return null;
+    public boolean deleteBook(int id) {
+        return false;
     }
 
     @Override
-    public Book[] viewBooks() {
-        return new Book[0];
+    public List<Book> viewBooks() {
+        return new ArrayList<>(Arrays.asList(availableBooks));
     }
 
     @Override

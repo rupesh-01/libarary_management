@@ -1,4 +1,4 @@
-import controllors.LibraryControllor;
+import controllers.LibraryController;
 import repositories.ArrayBookRepositoryImpl;
 import repositories.ArrayUserRepositoryImpl;
 import repositories.BookRepository;
@@ -11,7 +11,7 @@ public class Main {
         BookRepository bookRepository = new ArrayBookRepositoryImpl();
         UserRepository userRepository = new ArrayUserRepositoryImpl(10);
         LibraryService libraryService = new LibraryServiceImpl(bookRepository, userRepository);
-        LibraryControllor libraryControllor = new LibraryControllor(LibraryService);
-        libraryControllor.run();
+        LibraryController libraryController = new LibraryController(libraryService);
+        libraryController.run();
     }
 }
